@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Şifre Korumalı Site</title>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #fff;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #fff;
+        }
+
+        .question {
+            margin-top: 20px;
+        }
+
+        .question-option {
+            display: inline-block;
+            width: 25%;
+            padding: 10px;
+            border: 1px solid #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Şifre Korumalı Site</h1>
+
+        <div class="password-input">
+            <input type="password" placeholder="Şifrenizi girin">
+        </div>
+
+        <button type="submit">Giriş Yap</button>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container");
+        const passwordInput = document.querySelector(".password-input input");
+        const submitButton = document.querySelector("button");
+
+        function showQuestion() {
+            const question = document.createElement("div");
+            question.className = "question";
+            question.innerHTML = "Kimsin Sen?";
+
+            const questionOptions = [
+                {
+                    id: "a",
+                    text: "Ben Benim"
+                },
+                {
+                    id: "b",
+                    text: "Sanane"
+                },
+                {
+                    id: "c",
+                    text: "Ben Bir Robotum Bip Bop"
+                }
+            ];
+
+            for (const option of questionOptions) {
+                const optionElement = document.createElement("div");
+                optionElement.className = "question-option";
+                optionElement.id = option.id;
+                optionElement.innerHTML = option.text;
+
+                question.appendChild(optionElement);
+            }
+
+            container.appendChild(question);
+        }
+
+        submitButton.addEventListener("click", () => {
+            if (passwordInput.value === "123654LL") {
+                showQuestion();
+            } else {
+                window.location.href = "https://paste.com.tr/raw/pcwziejh";
+            }
+        });
+
+        window.onload = () => {
+            container.style.display = "flex";
+        };
+    </script>
+
+</body>
+</html>
